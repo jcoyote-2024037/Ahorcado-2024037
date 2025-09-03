@@ -3,10 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/informatica/Documents/NetBeansProjects/Ahorcado2024037/web/index.html</file>
             <file>file:/C:/Users/informatica/Documents/NetBeansProjects/Ahorcado2024037/web/js/script.js</file>
-            <file>file:/C:/Users/informatica/Documents/NetBeansProjects/Ahorcado2024037/web/img/6.jpg</file>
+            <file>file:/C:/Users/informatica/Documents/NetBeansProjects/Ahorcado2024037/web/ahorcado.jsp</file>
+            <file>file:/C:/Users/informatica/Documents/NetBeansProjects/Ahorcado2024037/src/java/controlador/Controlador.java</file>
             <file>file:/C:/Users/informatica/Documents/NetBeansProjects/Ahorcado2024037/web/css/style.css</file>
+            <file>file:/C:/Users/informatica/Documents/NetBeansProjects/Ahorcado2024037/src/java/config/Conexion.java</file>
+            <file>file:/C:/Users/informatica/Documents/NetBeansProjects/Ahorcado2024037/src/java/modelo/Palabras.java</file>
+            <file>file:/C:/Users/informatica/Documents/NetBeansProjects/Ahorcado2024037/web/css/login.css</file>
+            <file>file:/C:/Users/informatica/Documents/NetBeansProjects/Ahorcado2024037/src/java/modelo/PalabrasDAO.java</file>
+            <file>file:/C:/Users/informatica/Documents/NetBeansProjects/Ahorcado2024037/web/index.jsp</file>
+            <file>file:/C:/Users/informatica/Documents/NetBeansProjects/Ahorcado2024037/src/java/config/DBAhorcado.sql</file>
         </group>
     </open-files>
 </project-private>
