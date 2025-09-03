@@ -15,7 +15,6 @@ var enJuego = false;
 
 
 //TECLADO
-
 function Teclado() {
     let teclado = document.getElementById("teclado");
     teclado.innerHTML = "";
@@ -50,6 +49,60 @@ function iniciarJuego() {
 
     Teclado();
 }
+
+//adivinar la letra de la palabra
+function adivinarLetra(letra, boton) {
+    if (!enJuego) return;
+
+    boton.disabled = true; 
+    let acierto = false;
+
+    for (let i = 0; i < palabraSeleccionada.length; i++) {
+        if (palabraSeleccionada[i] === letra && guiones[i] === "_") {
+            guiones[i] = letra;
+            acierto = true;
+        }
+    }
+
+    if (!acierto) {
+        intentos++;
+        document.getElementById("imagenAhorcado").src = "img/" + (intentos + 1) + ".jpg";
+    }
+
+    document.getElementById("palabra").innerText = guiones.join(" ");
+
+    if (!guiones.includes("_")) {
+        document.getElementById("mensaje").innerText = "¡Ganaste! La palabra era " + palabraSeleccionada;
+        enJuego = false;
+    }
+
+    if (intentos >= maxIntentos) {
+        document.getElementById("mensaje").innerText = "¡Perdiste! La palabra era " + palabraSeleccionada;
+        enJuego = false;
+    }
+}
+
+function reiniciarJuego() {
+    iniciarJuego();
+}
+
+function pausarJuego() {
+    enJuego = false;
+    document.getElementById("mensaje").innerText = "Juego en pausa";
+}
+
+function salirJuego() {
+    enJuego = false;
+    palabraSeleccionada = "";
+    document.getElementById("palabra").innerText = "";
+    document.getElementById("pista1").innerText = "";
+    document.getElementById("pista2").innerText = "";
+    document.getElementById("pista3").innerText = "";
+    document.getElementById("imagenAhorcado").src = "img/1.jpg";
+    document.getElementById("teclado").innerHTML = "";
+    document.getElementById("mensaje").innerText = "Juego cerrado";
+}
+
 
 
 
