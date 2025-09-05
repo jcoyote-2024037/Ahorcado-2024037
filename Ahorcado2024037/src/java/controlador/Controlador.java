@@ -23,7 +23,20 @@ public class Controlador extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+        String menu = request.getParameter("menu");
+        String accion = request.getParameter("accion");
+
+        if (menu.equals("Ahorcado")) {
+            switch (accion) {
+                case "Listar":
+                    List<Palabras> listaPalabras = palabraDAO.listar();
+                    request.setAttribute("palabras", listaPalabras);
+                    request.getRequestDispatcher("ahorcado.jsp").forward(request, response);
+                    break;
+                default:
+                    throw new AssertionError();
+            }
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -59,14 +72,16 @@ public class Controlador extends HttpServlet {
             String user = request.getParameter("usuario");
             String pass = request.getParameter("password");
 
-            if ("quintom".equals(user) && "admin".equals(pass)) {
-                request.getRequestDispatcher("ahorcado.jsp").forward(request, response);
+            if ("1".equals(user) && "1".equals(pass)) {
+                response.sendRedirect("Controlador?menu=Ahorcado&accion=Listar");
             } else {
                 request.setAttribute("mensaje", "Usuario o contraseña incorrectos");
                 request.getRequestDispatcher("index.jsp").forward(request, response);
             }
+            
         } else {
             request.getRequestDispatcher("index.jsp").forward(request, response);
+            System.out.println("eror");
         }
     }
 

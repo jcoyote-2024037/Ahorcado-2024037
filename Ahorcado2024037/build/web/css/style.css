@@ -1,176 +1,226 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-  color: #fff;
-  background: linear-gradient(to bottom, #0b0b2b, #1b2735 70%, #090a0f);
-  min-height: 100vh;
-  overflow: hidden;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    color: #fff;
+    background: linear-gradient(to bottom, #0b0b2b, #1b2735 70%, #090a0f);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.1); 
-  backdrop-filter: blur(8px);
-  padding: 25px 30px;
-  border-radius: 12px;
-  max-width: 90vw;
-  max-height: 95vh;  
-  width: 90%;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 16px;
+    max-width: 900px;
+    width: 95%;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 h1 {
-  margin-top: 0;
-  margin-bottom: 15px;
-  font-size: 2.2em;
-  color: #f1f1f1;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 2.5em;
+    color: #f1f1f1;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.main-area {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+#escenario {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #escenario img {
-  width: 30vw;
-  max-width: 200px;
-  margin: 20px auto;
-  display: block;
-  border: 3px solid #ddd;
-  border-radius: 8px;
-  background: white;
+    width: 220px;
+    height: 220px;
+    object-fit: contain;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
 }
 
-#palabra {
-  font-size: 2em;
-  letter-spacing: 6px;
-  margin: 15px;
-  font-weight: bold;
-  color: #fff;
+/* Nuevo contenedor para agrupar cronómetro y pistas */
+.info-area {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    gap: 20px;
 }
 
 #pistas {
-  margin: 15px auto;
-  padding: 10px;
-  max-width: 400px;
-  background: rgba(255,255,255,0.15);
-  border-radius: 8px;
+    width: 100%;
+    background: rgba(255,255,255,0.15);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: left;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 #pistas p {
-  margin: 5px 0;
-  font-size: 0.95em;
-  color: #f1f1f1;
+    margin: 12px 0;
+    font-size: 1em;
+    line-height: 1.4;
+    color: #f8f9fa;
+}
+
+#pistas strong {
+    color: #74b9ff;
+    display: inline-block;
+    min-width: 60px;
+}
+
+#cronometro {
+    font-size: 2.2em;
+    font-weight: bold;
+    color: #e74c3c;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    align-self: center; /* Centrar el cronómetro dentro de su contenedor */
+}
+
+/* Continuación del resto de tu CSS (sin cambios aquí) */
+#palabra {
+    font-size: 2.2em;
+    letter-spacing: 8px;
+    margin: 25px 0;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    font-family: 'Courier New', monospace;
 }
 
 #teclado {
-  margin: 15px auto;
-  max-width: 95%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    max-width: 420px;
+    margin: 0 auto 25px;
+    padding: 0 10px;
 }
 
 #teclado button {
-  margin: 3px;
-  padding: 8px;
-  font-size: 1em;
-  width: 36px;
-  height: 36px;
-  border: none;
-  border-radius: 6px;
-  background: #3498db;
-  color: white;
-  cursor: pointer;
-  transition: background 0.2s;
+    padding: 12px 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    height: 45px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(145deg, #3498db, #2980b9);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 #teclado button:hover:not(:disabled) {
-  background: #2980b9;
+    background: linear-gradient(145deg, #2980b9, #1a5490);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+#teclado button:active:not(:disabled) {
+    transform: translateY(0);
 }
 
 #teclado button:disabled {
-  background: #bdc3c7;
-  color: #fff;
-  cursor: not-allowed;
+    background: linear-gradient(145deg, #95a5a6, #7f8c8d);
+    color: #ecf0f1;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
 }
 
 #controles {
-  margin: 15px;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
 #controles button {
-  margin: 5px;
-  padding: 10px 15px;
-  font-size: 1em;
-  border: none;
-  border-radius: 6px;
-  background: #003C70;
-  color: white;
-  cursor: pointer;
-  transition: background 0.2s;
+    padding: 12px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(145deg, #2c3e50, #34495e);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    min-width: 100px;
 }
 
 #controles button:hover {
-  background: #256BC4;
+    background: linear-gradient(145deg, #34495e, #2c3e50);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+#controles button:active {
+    transform: translateY(0);
 }
 
 #mensaje {
-  font-size: clamp(1em, 1.8vw, 1.1em);
-  font-weight: bold;
-  margin: 10px;
-  color: #ff7675;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 15px 0;
+    color: #e74c3c;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    min-height: 1.5em;
 }
 
-
+/* Efectos de fondo - estrellas */
 .stars {
-  width: 1px;
-  height: 1px;
-  position: absolute;
-  background: white;
-  box-shadow: 2vw 5vh 2px white, 10vw 8vh 2px white, 15vw 15vh 1px white,
-    22vw 22vh 1px white, 28vw 12vh 2px white, 32vw 32vh 1px white,
-    38vw 18vh 2px white, 42vw 35vh 1px white, 48vw 25vh 2px white,
-    53vw 42vh 1px white, 58vw 15vh 2px white, 63vw 38vh 1px white,
-    68vw 28vh 2px white, 73vw 45vh 1px white, 78vw 32vh 2px white,
-    83vw 48vh 1px white, 88vw 20vh 2px white, 93vw 52vh 1px white,
-    98vw 35vh 2px white, 5vw 60vh 1px white, 12vw 65vh 2px white,
-    18vw 72vh 1px white, 25vw 78vh 2px white, 30vw 85vh 1px white,
-    35vw 68vh 2px white, 40vw 82vh 1px white, 45vw 92vh 2px white,
-    50vw 75vh 1px white, 55vw 88vh 2px white, 60vw 95vh 1px white,
-    65vw 72vh 2px white, 70vw 85vh 1px white, 75vw 78vh 2px white,
-    80vw 92vh 1px white, 85vw 82vh 2px white, 90vw 88vh 1px white,
-    95vw 75vh 2px white;
-  animation: twinkle 8s infinite linear;
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    background: white;
+    box-shadow: 2vw 5vh 2px white, 10vw 8vh 2px white, 15vw 15vh 1px white, 22vw 22vh 1px white, 28vw 12vh 2px white, 32vw 32vh 1px white, 38vw 18vh 2px white, 42vw 35vh 1px white, 48vw 25vh 2px white, 53vw 42vh 1px white, 58vw 15vh 2px white, 63vw 38vh 1px white, 68vw 28vh 2px white, 73vw 45vh 1px white, 78vw 32vh 2px white, 83vw 48vh 1px white, 88vw 20vh 2px white, 93vw 52vh 1px white, 98vw 35vh 2px white, 5vw 60vh 1px white, 12vw 65vh 2px white, 18vw 72vh 1px white, 25vw 78vh 2px white, 30vw 85vh 1px white, 35vw 68vh 2px white, 40vw 82vh 1px white, 45vw 92vh 2px white, 50vw 75vh 1px white, 55vw 88vh 2px white, 60vw 95vh 1px white, 65vw 72vh 2px white, 70vw 85vh 1px white, 75vw 78vh 2px white, 80vw 92vh 1px white, 85vw 82vh 2px white, 90vw 88vh 1px white, 95vw 75vh 2px white;
+    animation: twinkle 8s infinite linear;
 }
 
 .stars::after {
-  content: "";
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  background: white;
-  box-shadow: 8vw 12vh 2px white, 16vw 18vh 1px white, 24vw 25vh 2px white,
-    33vw 15vh 1px white, 41vw 28vh 2px white, 49vw 35vh 1px white,
-    57vw 22vh 2px white, 65vw 42vh 1px white, 73vw 28vh 2px white,
-    81vw 48vh 1px white, 89vw 32vh 2px white, 97vw 45vh 1px white,
-    3vw 68vh 2px white, 11vw 75vh 1px white, 19vw 82vh 2px white,
-    27vw 88vh 1px white, 35vw 72vh 2px white, 43vw 85vh 1px white,
-    51vw 92vh 2px white, 59vw 78vh 1px white;
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background: white;
+    box-shadow: 8vw 12vh 2px white, 16vw 18vh 1px white, 24vw 25vh 2px white, 33vw 15vh 1px white, 41vw 28vh 2px white, 49vw 35vh 1px white, 57vw 22vh 2px white, 65vw 42vh 1px white, 73vw 28vh 2px white, 81vw 48vh 1px white, 89vw 32vh 2px white, 97vw 45vh 1px white, 3vw 68vh 2px white, 11vw 75vh 1px white, 19vw 82vh 2px white, 27vw 88vh 1px white, 35vw 72vh 2px white, 43vw 85vh 1px white, 51vw 92vh 2px white, 59vw 78vh 1px white;
 }
 
 .shooting-star {
-  position: absolute;
-  width: 100px;
-  height: 2px;
-  background: linear-gradient(90deg, white, transparent);
-  animation: shoot 3s infinite ease-in;
+    position: absolute;
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, white, transparent);
+    animation: shoot 3s infinite ease-in;
 }
 
 .shooting-star:nth-child(2) { top: 20%; left: -100px; animation-delay: 0s; }
@@ -180,11 +230,83 @@ h1 {
 .shooting-star:nth-child(6) { top: 80%; left: -100px; animation-delay: 4s; }
 
 @keyframes twinkle {
-  0%, 100% { opacity: 0.8; }
-  50% { opacity: 0.4; }
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 0.4; }
 }
 
 @keyframes shoot {
-  0% { transform: translateX(0) translateY(0) rotate(25deg); opacity: 1; }
-  100% { transform: translateX(120vw) translateY(50vh) rotate(25deg); opacity: 0; }
+    0% { transform: translateX(0) translateY(0) rotate(25deg); opacity: 1; }
+    100% { transform: translateX(120vw) translateY(50vh) rotate(25deg); opacity: 0; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card {
+        padding: 20px;
+        margin: 10px;
+    }
+    
+    .main-area {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    /* En dispositivos móviles, el cronómetro y las pistas se alinean debajo del ahorcado */
+    .info-area {
+        align-items: center;
+        text-align: center;
+    }
+
+    #escenario img {
+        width: 180px;
+        height: 180px;
+    }
+    
+    #pistas {
+        max-width: 100%;
+        text-align: center;
+    }
+    
+    #teclado {
+        grid-template-columns: repeat(6, 1fr);
+        max-width: 350px;
+    }
+    
+    #palabra {
+        font-size: 1.8em;
+        letter-spacing: 4px;
+    }
+    
+    h1 {
+        font-size: 2em;
+    }
+    
+    #controles {
+        gap: 10px;
+    }
+    
+    #controles button {
+        padding: 10px 15px;
+        font-size: 0.9em;
+        min-width: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    #teclado {
+        grid-template-columns: repeat(5, 1fr);
+        max-width: 300px;
+    }
+    
+    #teclado button {
+        padding: 10px 6px;
+        font-size: 1em;
+        height: 40px;
+    }
+    
+    #escenario img {
+        width: 150px;
+        height: 150px;
+    }
 }
