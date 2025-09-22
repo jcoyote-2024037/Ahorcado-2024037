@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 @Table(name = "Palabras")
 public class Palabra {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "codigoPalabra")

@@ -1,4 +1,4 @@
--- drop database if exists DBAhorcado;
+-- Drop database if exists DBAhorcado;
 create database DBAhorcado;
 use DBAhorcado;
 
@@ -10,6 +10,14 @@ CREATE TABLE Palabras (
     pista3 VARCHAR(255) NOT NULL,
     PRIMARY KEY PK_codigoPalabra (codigoPalabra)
 );
+
+CREATE TABLE Usuarios (
+	codigoUsuario INT AUTO_INCREMENT,
+    nombreUsuario VARCHAR(100) NOT NULL,
+    contrasena VARCHAR(100) NOT NULL,
+    Primary Key PK_codigoUsuario (codigoUsuario) 
+);
+
 
 -- AGREGAR PALABRA
 DELIMITER $$
@@ -86,3 +94,28 @@ BEGIN
     WHERE codigoPalabra = codPalabra;
 END$$
 DELIMITER ;
+
+DELIMITER $$
+
+CREATE PROCEDURE sp_ValidarUsuario(
+    IN p_nombreUsuario VARCHAR(100),
+    IN p_contrasena VARCHAR(100)
+)
+BEGIN
+    SELECT 
+        u.codigoUsuario,
+        u.nombreUsuario
+    FROM Usuarios AS u
+    WHERE u.nombreUsuario = p_nombreUsuario
+      AND u.contrasena = p_contrasena;
+END $$
+
+DELIMITER ;
+CALL sp_ValidarUsuario('juan', '1234');
+
+INSERT INTO Usuarios (nombreUsuario, contrasena)
+VALUES ('juan', '1234'),
+('jorge', '12345');
+
+Select * from Palabras;
+Select * From Usuarios;

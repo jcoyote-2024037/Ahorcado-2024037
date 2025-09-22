@@ -66,23 +66,6 @@ public class Controlador extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        String accion = request.getParameter("accion");
-
-        if ("Ingresar".equalsIgnoreCase(accion)) {
-            String user = request.getParameter("usuario");
-            String pass = request.getParameter("password");
-
-            if ("1".equals(user) && "1".equals(pass)) {
-                response.sendRedirect("Controlador?menu=Ahorcado&accion=Listar");
-            } else {
-                request.setAttribute("mensaje", "Usuario o contraseña incorrectos");
-                request.getRequestDispatcher("index.jsp").forward(request, response);
-            }
-            
-        } else {
-            request.getRequestDispatcher("index.jsp").forward(request, response);
-            System.out.println("eror");
-        }
     }
 
     /**
