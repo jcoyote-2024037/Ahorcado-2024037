@@ -11,7 +11,7 @@
             <h2>Iniciar Sesión</h2>
 
             <!-- Formulario que envía los datos al servlet "controlador" -->
-            <form action="Controlador" method="POST">
+            <form action="Validar" method="POST">
                 <input type="text" name="usuario" placeholder="Usuario" required><br>
                 <input type="password" name="password" placeholder="Contraseña" required><br>
                 <button type="submit" name="accion" value="Ingresar">Entrar</button>
