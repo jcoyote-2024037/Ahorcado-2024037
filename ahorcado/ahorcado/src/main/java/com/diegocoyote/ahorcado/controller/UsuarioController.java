@@ -2,6 +2,7 @@ package com.diegocoyote.ahorcado.controller;
 
 import com.diegocoyote.ahorcado.model.Usuario;
 import com.diegocoyote.ahorcado.service.UsuarioService;
+import jakarta.validation.Valid; // Importar la anotación @Valid
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,12 +28,12 @@ public class UsuarioController {
     }
 
     @PostMapping
-    public Usuario createUsuario(@RequestBody Usuario usuario) {
+    public Usuario createUsuario(@Valid @RequestBody Usuario usuario) {
         return usuarioService.saveUsuario(usuario);
     }
 
     @PutMapping("/{id}")
-    public Usuario updateUsuario(@PathVariable Integer id, @RequestBody Usuario usuario) {
+    public Usuario updateUsuario(@PathVariable Integer id, @Valid @RequestBody Usuario usuario) {
         return usuarioService.updateUsuario(id, usuario);
     }
 
