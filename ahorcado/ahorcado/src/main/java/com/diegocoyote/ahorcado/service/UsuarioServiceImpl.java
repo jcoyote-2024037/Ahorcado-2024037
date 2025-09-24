@@ -30,6 +30,13 @@ public class UsuarioServiceImpl implements UsuarioService {
 
     @Override
     public Usuario saveUsuario(Usuario usuario) {
+        // Validar el formato del nombre de usuario manualmente
+        String regex = "^[a-zA-Z0-9._%+-]+@(gmail\\.com|yahoo\\.com|kinal\\.edu\\.gt)$";
+        if (!usuario.getNombreUsuario().matches(regex)) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "El nombre de usuario debe ser un correo válido de dominio gmail.com, yahoo.com o kinal.edu.gt.");
+        }
+
+        // Validar si el nombre de usuario ya existe
         if (usuarioRepository.existsByNombreUsuario(usuario.getNombreUsuario())) {
             throw new ResponseStatusException(HttpStatus.CONFLICT, "El nombre de usuario ya existe.");
         }
